@@ -1,0 +1,31 @@
+<Panel ux:Class="cancerApp.Detail">
+	<Router ux:Dependency="router" />
+	<JavaScript File="MainView.js" />
+	<JavaScript>
+		var hikr = this.Parameter;
+
+		module.exports = {
+			hikr: hikr
+		};
+	</JavaScript>
+
+	<DockPanel>
+		<Material.AppBar Dock="Top">
+			<Material.AppBarIcon Dock="Left" Icon="ArrowLeft" Clicked="{returnBack}" />
+        <Text Value="{hikr.title}" TextColor="#FFF" Alignment="CenterLeft" FontSize="15" />
+			<Material.AppBarIcon Dock="Right" Icon="DotsVertical" Clicked="{toggleMenu}" />
+			<!--Material.AppBarIcon Dock="Right" Icon="AccountPlus"  /-->
+		</Material.AppBar>
+
+		<ScrollView>
+			<StackPanel ItemSpacing="10">
+				<Material.Card Height="150" Width="100%" Margin="0,0,0,0">
+          <Image File="Assets/Images/6.jpeg" Layer="Background" StretchMode="Fill">
+            <Text Value="{hikr.title}" Alignment="Center" TextColor="#FFF" FontSize="27" TextWrapping="Wrap" />
+          </Image>
+				</Material.Card>
+				<Text Value="{hikr.description}" TextWrapping="Wrap" FontSize="17" Margin="10,10,10,0" />
+			</StackPanel>
+		</ScrollView>
+	</DockPanel>
+</Panel>

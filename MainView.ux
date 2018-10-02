@@ -1,23 +1,19 @@
 <App>
-	<Material.DrawerPanel>
-		<Material.Drawer ux:Binding="Drawer" Edge="Left">
-			<Text Alignment="Center">Hello!</Text>
-		</Material.Drawer>
-			
-		<DockPanel>
-
-			<Material.AppBar Dock="Top">
-				<Material.AppBarIcon Dock="Left" Icon="Menu" Clicked="{openDrawerPanel}" />
-				<Material.AppBarIcon Dock="Right" Icon="DotsVertical" Clicked="{toggleMenu}" />
-				<Material.AppBarIcon Dock="Right" Icon="AccountPlus"  />
-			</Material.AppBar>
-			
-			<StackPanel Alignment="BottomRight">
-				<Material.MiniActionButton Icon="Plus" />
-				<Material.ActionButton Icon="AccountPlus" />
-			</StackPanel>
-
-		</DockPanel>
-	</Material.DrawerPanel>
+	<JavaScript File="MainView.js" />
+	<Font File="Assets/fonts/fontawesome-webfont.ttf" ux:Global="FontAwesome" />
+	<Font File="Assets/fonts/Roboto-Black.ttf" ux:Global="Black" />
+	<Font File="Assets/fonts/Roboto-Bold.ttf" ux:Global="Bold" />
+	<Font File="Assets/fonts/Roboto-Light.ttf" ux:Global="Light" />
+	<Font File="Assets/fonts/Roboto-Thin.ttf" ux:Global="Thin" />
+	<Android.StatusBarConfig Color="#D32F2F" IsVisible="True" />
+	<iOS.StatusBarConfig Style="Light" Animation="Slide" IsVisible="True" />
+	<Router ux:Name="router" />
+	<Navigator DefaultPath="Splash">
+		<cancerApp.Splash ux:Template="Splash" router="router" />
+		<cancerApp.Home ux:Template="Home" router="router" />
+		<cancerApp.Detail ux:Template="Detail" router="router" />
+		<cancerApp.Partenaire ux:Template="Partenaire" router="router" />
+		<cancerApp.ViewCard ux:Template="ViewCard" router="router" />
+	</Navigator>
 </App>
 

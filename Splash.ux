@@ -1,0 +1,17 @@
+<Panel ux:Class="cancerApp.Splash" Clicked="{HomeMain}">
+	<Router ux:Dependency="router" />
+  <JavaScript File="MainView.js" />
+	<DockPanel>
+		<StatusBarBackground Dock="Top" />
+		<BottomBarBackground Dock="Bottom" />
+		<Panel Height="50%" Width="100%" Background="#D32F2F" Dock="Top">
+			<StackPanel ItemSpacing="20" Alignment="Center">
+        <Material.AppBarIcon Icon="Heart" Alignment="Center" />
+				<Text Value="CANCER DU COL KUNAFONI" Alignment="Center" Margin="25,0,25,0" FontSize="25" TextColor="#FFF" TextWrapping="Wrap" TextAlignment="Center" LineSpacing="10" />
+				<Text TextAlignment="Center" Value="Ensemble luttons contre le cancer du col de l'utérus" Alignment="Center" TextColor="#FFF" Margin="25,0,25,0" TextWrapping="Wrap" />
+			</StackPanel>
+		</Panel>
+		<Image File="Assets/Images/ajid.jpeg" Alignment="Center" StretchMode="Uniform" Height="200" Width="200" StretchDirection="DownOnly" StretchSizing="Natural" />
+		<Image File="Assets/Images/mali.png" Height="30" Dock="Bottom" Margin="0,0,0,10" />
+	</DockPanel>
+</Panel>

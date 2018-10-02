@@ -1,0 +1,55 @@
+<Panel ux:Class="cancerApp.Home">
+    <Router ux:Dependency="router" />
+    <JavaScript File="MainView.js" />
+    <Material.DrawerPanel>
+		<Material.Drawer ux:Binding="Drawer" Edge="Left">
+			<Text Alignment="Center">Hello!</Text>
+		</Material.Drawer>
+			
+		<DockPanel>
+
+			<Material.AppBar Dock="Top">
+				<Material.AppBarIcon Dock="Left" Icon="Menu" Clicked="{openDrawerPanel}" />
+          <Text Value="CANCER DU COL KUNAFONI" TextColor="#FFF" Alignment="Center" FontSize="15" />
+				<Material.AppBarIcon Dock="Right" Icon="DotsVertical" Clicked="{toggleMenu}" />
+				<Material.AppBarIcon Dock="Right" Icon="AccountPlus"  />
+			</Material.AppBar>
+			
+			<StackPanel Alignment="BottomRight">
+				<!-- Material.MiniActionButton Icon="Plus" /-->
+				<Material.ActionButton Icon="Plus" />
+			</StackPanel>
+
+      <ScrollView>
+        <StackPanel ItemSpacing="10" Margin="0,10,0,0">
+				<Text Value="Un peu de science" FontSize="18" Alignment="CenterLeft" Margin="10,0,0,10">
+					<Rectangle Height="1" Fill="#000" Alignment="CenterLeft" Margin="0,20,0,0" Width="110%" Opacity=".5" />
+				</Text>
+          <Each Items={science}>
+            <Material.Card Height="75" Width="95%" >
+							<Panel Clicked="{redirect}">
+								<Grid Columns="50,1*,50">
+									<Image File="Assets/Images/y.png" Height="25" Width="25" Alignment="Center" />
+									<Text Value="{title}" FontSize="20" Alignment="CenterLeft" TextAlignment="Left" Margin="10,0,0,0">
+										<Text Value="{extract}" Opacity=".5" Margin="0,25,0,0" TextWrapping="Wrap" />
+									</Text>
+									<Image File="Assets/Images/g.png" Height="35" Width="35" Alignment="Center" />
+								</Grid>
+							</Panel>
+            </Material.Card>
+          </Each>
+					<Text Value="More others" Alignment="CenterLeft" />
+					<Each Items={content}>
+						<Material.Card Height="150" Width="95%" >
+							<Panel Clicked="{autoRoute}">
+								<Image File="{image}" Layer="Background" StretchMode="Fill" />
+								<Text Value="{title}" FontSize="30" Alignment="Center" TextAlignment="Left" Margin="10,0,10,0" TextColor="#000" TextWrapping="Wrap" />
+							</Panel>
+            </Material.Card>
+					</Each>
+        </StackPanel>
+      </ScrollView>
+
+		</DockPanel>
+	</Material.DrawerPanel>
+</Panel>

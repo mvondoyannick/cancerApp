@@ -1,0 +1,35 @@
+<Panel ux:Class="cancerApp.Partenaire">
+	<Router ux:Dependency="router" />
+	<JavaScript File="MainView.js" />
+	<JavaScript>
+		var hikr = this.Parameter;
+
+		module.exports = {
+			hikr: hikr
+		};
+	</JavaScript>
+
+	<DockPanel>
+		<Material.AppBar Dock="Top">
+			<Material.AppBarIcon Dock="Left" Icon="ArrowLeft" Clicked="{returnBack}" />
+        <Text Value="Partenaires Médicaux" TextColor="#FFF" Alignment="CenterLeft" FontSize="15" />
+			<Material.AppBarIcon Dock="Right" Icon="DotsVertical" Clicked="{toggleMenu}" />
+			<!--Material.AppBarIcon Dock="Right" Icon="AccountPlus"  /-->
+		</Material.AppBar>
+
+		<ScrollView>
+			<StackPanel ItemSpacing="10">
+				<Text Value="Nos partenaires médicaux" TextWrapping="Wrap" FontSize="17" Margin="10,10,10,0" />
+        <Each Items="{partenaire}">
+					<Material.Card Height="200" Width="95%">
+						<Image File="Assets/Images/1.jpg" StretchMode="Fill" Clicked="{medicalCard}">
+							<Rectangle Height="80" Width="100%" Alignment="BottomCenter" Fill="#FFF">
+								<Text Value="{name}" TextWrapping="Wrap" FontSize="20" Margin="10,0,0,0" Alignment="CenterLeft" />
+							</Rectangle>
+						</Image>
+					</Material.Card>
+        </Each>
+			</StackPanel>
+		</ScrollView>
+	</DockPanel>
+</Panel>

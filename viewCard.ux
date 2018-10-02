@@ -1,0 +1,51 @@
+<Panel ux:Class="cancerApp.ViewCard">
+  <Router ux:Dependency="router" />
+  <JavaScript File="MainView.js" />
+  <JavaScript>
+    var hikr = this.Parameter;
+    
+    module.exports = {
+      hikr: hikr
+    }
+  </JavaScript>
+
+  <DockPanel>
+    <Material.AppBar Dock="Top">
+			<Material.AppBarIcon Dock="Left" Icon="ArrowLeft" Clicked="{returnBack}" />
+        <Text Value="{hikr.name}" TextColor="#FFF" Alignment="CenterLeft" FontSize="15" />
+			<Material.AppBarIcon Dock="Right" Icon="DotsVertical" Clicked="{toggleMenu}" />
+			<!--Material.AppBarIcon Dock="Right" Icon="AccountPlus"  /-->
+		</Material.AppBar>
+
+    <ScrollView>
+      <StackPanel ItemSpacing="20">
+        <NativeViewHost Margin="0,0,0,25">
+          <MapView Latitude="59.911567" Longitude="10.741030" Zoom="10" Height="300" Width="100%">
+            <MapMarker Latitude="59.911567" Longitude="10.741030" Label="Fuse HQ"/>
+          </MapView>
+        </NativeViewHost>
+        <Grid Columns="50,1*">
+          <Text Font="FontAwesome" Alignment="Center" FontSize="25">&#xf0f8;</Text>
+          <Text Value="{hikr.name}" FontSize="25" Alignment="CenterLeft" />
+        </Grid>
+        <Grid Columns="50,1*">
+          <Text Font="FontAwesome" Alignment="Center" FontSize="25">&#xf1ad;</Text>
+          <Text Value="{hikr.ville}" FontSize="25" Alignment="CenterLeft" />
+        </Grid>
+        <Grid Columns="50,1*">
+          <Text Font="FontAwesome" Alignment="Center" FontSize="25">&#xf095;</Text>
+          <Text Value="{hikr.phone1}" FontSize="25" Alignment="CenterLeft" />
+        </Grid>
+        <Grid Columns="50,1*">
+          <Text Font="FontAwesome" Alignment="Center" FontSize="25">&#xf095;</Text>
+          <Text Value="{hikr.phone2}" FontSize="25" Alignment="CenterLeft" Clicked="{call}" />
+        </Grid>
+      </StackPanel>
+    </ScrollView>
+    <Rectangle CornerRadius="2" Fill="Red" Dock="Bottom" Height="50" Width="80%" Margin="0,0,0,10">
+      <Text Value="Appeler {hikr.name}" Clicked="{call}" Alignment="Center" TextWrapping="Wrap" TextColor="#FFF" />
+      <DropShadow />
+    </Rectangle>
+  </DockPanel>
+
+</Panel>

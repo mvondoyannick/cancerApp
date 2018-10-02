@@ -1,0 +1,33 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+  	"Fuse",
+  	"FuseJS",
+    "Fuse.Maps",
+    "Fuse.share",
+    "Fuse.Launcher",
+    "Fuse.GeoLocation",
+    "Fuse.LocalNotifications"
+  ],
+  "Includes": [
+    "*",
+    "Assets/Images/*.jpeg:Bundle",
+    "Assets/Images/*.jpg:Bundle",
+    "Assets/Images/*.png:Bundle",
+  ],
+  "Projects": [
+    "modules/fuse-snackbar/src/fuse-snackbar.unoproj"
+  ],
+  "Mobile": {
+    "Orientations": "Portrait"
+  },
+  "Android": {
+    "Package": "com.ajid.kunafoni",
+    "PreviewPackage": "com.ajid.kunafoni.preview",
+    "Geo": {
+      "ApiKey": "AIzaSyAFKl1RV2NAApyOS49fbpij70lv3PLsW1w"
+    },
+    "VersionName": "0.0.1a",
+    "ApplicationLabel": "CANCER DU COL KUNAFONI"
+  }
+}

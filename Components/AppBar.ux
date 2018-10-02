@@ -7,7 +7,8 @@
 		<Material.MaterialIcon Icon="{Property Icon}" Color="{Resource Material.AppBarIconColor}" Alignment="VerticalCenter" Margin="16,0,16,0" />
 	</Material.RippleResponseCircle>
 
-	<DockPanel ux:Binding="Children" Color="{Resource Material.PrimaryColor}">
+	<DockPanel ux:Binding="Children" Color="#D32F2F">
+	<!-- {Resource Material.PrimaryColor} -->
 		<StatusBarBackground Dock="Top">
 			<Android.StatusBarConfig Color="#0003" />
 		</StatusBarBackground>
