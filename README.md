@@ -1,4 +1,4 @@
-# Fuse.MaterialDesign
+# Fuse.CancerApp KUNAFONI
 
 This is an open source community effort to implement a component library that conforms to the Material Design guidelines (https://material.google.com/).
 
